@@ -54,7 +54,7 @@ TEMPLATE_LOADERS = (
 TEMPLATE_CONTEXT_PROCESSORS += (
     'django.core.context_processors.request',
     'django.core.context_processors.static',
-    'feincms.context_processors.add_page_if_missing', # This context processor frequently causes transaction aborted errors!
+    # 'feincms.context_processors.add_page_if_missing', # This context processor frequently causes transaction aborted errors!
 )
 
 MIDDLEWARE_CLASSES = (
