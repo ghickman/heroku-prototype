@@ -1,0 +1,5 @@
+*.py[co]
+*.sw[op]
+local_settings.py
+db.sqlite
+client_media
