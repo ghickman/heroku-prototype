@@ -99,7 +99,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 )
 
-SENTRY_DSN = 'http://1d8d5aea88a74268bba0332eb74bbd1b:9f8e593ca03f4070836522083f14c4bc@sentry.incuna.com/4'
+SENTRY_DSN = 'http://1303ab843ffc44b498d4838a3a8079f8:25cc2fb8690b45d7bf81e858ddb46110@sentry.incuna.com/4'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
