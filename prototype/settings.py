@@ -45,6 +45,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 TEMPLATE_DIRS = (os.path.join(DIRNAME, 'templates'))
 TEMPLATE_LOADERS = (
@@ -83,6 +84,7 @@ INSTALLED_APPS = (
     # third party util apps
     'gunicorn',
     'raven.contrib.django',
+    'storages',
 
     # django apps
     'django.contrib.auth',
