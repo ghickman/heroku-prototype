@@ -30,11 +30,17 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+# S3 Backend
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
 MEDIA_ROOT = os.path.join(DIRNAME, 'client_media')
 MEDIA_URL = 'client_media'
 STATIC_ROOT = os.path.join(DIRNAME, 'static_media')
-STATIC_URL = '/static/'
-STATICFILES_DIRS = ()
+STATIC_URL = 'http://{0}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+STATICFILES_DIRS = (os.path.join(DIRNAME, 'static'))
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
