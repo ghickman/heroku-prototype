@@ -1,0 +1,8 @@
+django==1.4
+django-mptt==0.5.2
+django-wkhtmltopdf==0.2.2
+feincms==1.5.3
+gunicorn==0.14.2
+pillow==
+psycopg2==2.4.5
+raven==1.5.0
