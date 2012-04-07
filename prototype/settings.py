@@ -5,7 +5,7 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 DIRNAME = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -47,7 +47,7 @@ STATICFILES_FINDERS = (
 )
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-TEMPLATE_DIRS = (os.path.join(DIRNAME, 'templates'))
+TEMPLATE_DIRS = (os.path.join(DIRNAME, 'templates'),)
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
@@ -75,6 +75,9 @@ ROOT_URLCONF = 'prototype.urls'
 WSGI_APPLICATION = 'prototype.wsgi.application'
 
 INSTALLED_APPS = (
+    # project apps
+    'cache',
+
     # third party apps
     # 'feincms',
     # 'feincms.module.page',
