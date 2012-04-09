@@ -139,6 +139,9 @@ CACHES = {
     }
 }
 
+GDAL_LIBRARY_PATH = '/app/.heroku/gdal/lib/libgdal.so'
+GEOS_LIBRARY_PATH = '/app/.heroku/geos/lib/libgeos_c.so'
+
 try:
     from local_settings import *
 except ImportError:
