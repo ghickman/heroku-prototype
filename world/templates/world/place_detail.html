@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block extra_script %}
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDcRfss_dU1WP0Q47dqjP82nANzz7FBBXE&sensor=false"></script>
+<script type="text/javascript">
+    function display_map() {
+        var myOptions = {
+            center: new google.maps.LatLng({{ lat }}, {{ lng }}),
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map"), myOptions);
+    }
+    window.onload = display_map;
+</script>
+{% endblock %}
+
+{% block content %}
+<div id="map" style="height:400px;width:600px;"></div>
+{% endblock %}
+

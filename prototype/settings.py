@@ -16,8 +16,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'prototype',
+        'USER': 'prototype',
+        'PASSWORD': 'prototype',
+        'HOST': 'toc.ghickman.co.uk'
     }
 }
 
@@ -77,6 +80,7 @@ WSGI_APPLICATION = 'prototype.wsgi.application'
 INSTALLED_APPS = (
     # project apps
     'cache',
+    'world',
 
     # third party apps
     # 'feincms',
@@ -97,6 +101,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.gis',
 )
 
 SENTRY_DSN = 'http://1303ab843ffc44b498d4838a3a8079f8:25cc2fb8690b45d7bf81e858ddb46110@sentry.incuna.com/4'

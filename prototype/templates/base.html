@@ -2,12 +2,14 @@
 <html>
     <head>
         <title>Heroku Prototype</title>
+        {% block extra_script %}{% endblock %}
     </head>
     <body>
         <h1>Heroku, Yeah</h1>
         <nav>
             <ul>
                 <li><a href="{% url cache %}">Caching</a></li>
+                <li><a href="{% url geo %}">GeoLocation</a></li>
                 <li><a href="{% url pdf %}">PDF</a></li>
             </ul>
         </nav>
