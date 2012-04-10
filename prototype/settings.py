@@ -20,5 +20,5 @@ GDAL_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgdal.so'
 GEOS_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgeos_c.so'
 
 # wkhtmltopdf binary
-# WKHTMLTOPDF_CMD = '/app/.heroku/wkhtmltopdf'
+WKHTMLTOPDF_CMD = '/app/.heroku/wkhtmltopdf'
 
