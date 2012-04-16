@@ -7,7 +7,6 @@ class PlaceView(DetailView):
     model = Place
 
     def get_context_data(self, **kwargs):
-        1/0
         return {'lat': self.object.x, 'lng': self.object.y}
 
     def get_object(self):
