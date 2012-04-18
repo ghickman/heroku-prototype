@@ -20,7 +20,7 @@ DATABASES = {
         'NAME': 'prototype',
         'USER': 'prototype',
         'PASSWORD': 'prototype',
-        'HOST': 'toc.ghickman.co.uk'
+        'HOST': os.environ.get('DATABASE_HOST')
     }
 }
 
@@ -44,6 +44,7 @@ AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
 
 # static
 MEDIA_ROOT = os.path.join(DIRNAME, 'client_media')
@@ -89,6 +90,7 @@ WSGI_APPLICATION = 'prototype.wsgi.application'
 
 INSTALLED_APPS = (
     # project apps
+    'avatar',
     'cache',
     'world',
 
@@ -140,8 +142,8 @@ LOGGING = {
 }
 
 # geodjango binaries
-GDAL_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgdal.so'
-GEOS_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgeos_c.so'
+GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 
 # wkhtmltopdf binary
 WKHTMLTOPDF_CMD = '/app/.heroku/wkhtmltopdf'
