@@ -1,5 +1,7 @@
 *.py[co]
 *.sw[op]
-local_settings.py
+.env
+.foreman
 db.sqlite
 client_media
+local_settings.py
